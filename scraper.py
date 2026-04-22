@@ -63,11 +63,20 @@ TICKER_MAP = {
     "RUSSELL:RUT": "^RUT",
     "KRX:KOSPI": "^KS11",
     "KRX:KOSDAQ": "^KQ11",
+    "TSE:1308": "1308.T",
     "NI225": "^N225",
     "INDEX:TAIEX": "^TWII",
     "DAX": "^GDAXI",
     "UK100": "^FTSE",
+    "SXXP": "^STOXX",
+    "SX5E": "^STOXX50E",
+    "FTSEMIB": "FTSEMIB.MI",
+    "IBEX35": "^IBEX",
+    "SMI": "^SSMI",
+    "AEX": "^AEX",
+    "OMXS30": "^OMX",
     "HSI": "^HSI",
+    "SSE:000300": "000300.SS",
     "EEM": "EEM",
     "FXI": "FXI",
     "TSX:TSX": "^GSPTSE",
@@ -193,7 +202,30 @@ TICKER_MAP = {
     "LULU": "LULU",
     "SLM": "SLM",
     "BRKR": "BRKR",
-    "BABA": "BABA"
+    "BABA": "BABA",
+
+    # Global leadership board defaults
+    "AVGO": "AVGO",
+    "AMD": "AMD",
+    "TSM": "TSM",
+    "ASML": "ASML",
+    "LLY": "LLY",
+    "UNH": "UNH",
+    "JPM": "JPM",
+    "V": "V",
+    "CAT": "CAT",
+    "GE": "GE",
+    "RTX": "RTX",
+    "CEG": "CEG",
+    "NEE": "NEE",
+    "XOM": "XOM",
+    "FCX": "FCX",
+    "LIN": "LIN",
+    "COST": "COST",
+    "HD": "HD",
+    "NFLX": "NFLX",
+    "SAP": "SAP",
+    "NVO": "NVO"
 }
 
 def get_performance_metrics(hist):
@@ -221,9 +253,16 @@ def get_performance_metrics(hist):
     # 1M
     month_ago_close = get_reference_close(current_date - pd.DateOffset(months=1))
     if month_ago_close is not None:
-        mtd = ((current_close - month_ago_close) / month_ago_close) * 100
+        one_month = ((current_close - month_ago_close) / month_ago_close) * 100
     else:
-        mtd = 0.0
+        one_month = 0.0
+
+    # 6M
+    six_month_ago_close = get_reference_close(current_date - pd.DateOffset(months=6))
+    if six_month_ago_close is not None:
+        six_month = ((current_close - six_month_ago_close) / six_month_ago_close) * 100
+    else:
+        six_month = 0.0
 
     # YTD
     ytd_data = hist[hist.index.year != current_date.year]
@@ -252,7 +291,9 @@ def get_performance_metrics(hist):
         "price": f"{current_close:.2f}",
         "idx1D": f"{d1:.2f}",
         "idx5D": f"{d5:.2f}",
-        "idxMTD": f"{mtd:.2f}",
+        "idxMTD": f"{one_month:.2f}",
+        "idx1M": f"{one_month:.2f}",
+        "idx6M": f"{six_month:.2f}",
         "idxYTD": f"{ytd:.2f}",
         "signal": signal
     }

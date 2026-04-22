@@ -29,7 +29,7 @@ if sys.platform == "win32":
 
 # Configuration
 PORT = 8080
-REFRESH_INTERVAL = 60  # Background scraper interval in seconds
+REFRESH_INTERVAL = 10  # Background scraper interval in seconds
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 AUTO_OPEN_BROWSER = os.getenv("STANLEY_NO_BROWSER", "").lower() not in {"1", "true", "yes", "on"}
 
@@ -489,14 +489,14 @@ def main():
         f"""
 +--------------------------------------------------+
 |     거인의 어깨 - 매크로 대시보드 서버            |
-|     Auto-Refresh: {REFRESH_INTERVAL // 60}분 주기                      |
+|     Auto-Refresh: {REFRESH_INTERVAL}초 주기                       |
 +--------------------------------------------------+
 """
     )
 
     refresh_thread = threading.Thread(target=background_refresh, daemon=True)
     refresh_thread.start()
-    print(f"✔ {REFRESH_INTERVAL // 60}분 주기 자동 갱신 활성화")
+    print(f"✔ {REFRESH_INTERVAL}초 주기 자동 갱신 활성화")
 
     print("🔄 초기 데이터 수집 시작... (백그라운드)")
     threading.Thread(target=run_scraper, daemon=True).start()

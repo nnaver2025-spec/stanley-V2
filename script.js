@@ -6,10 +6,18 @@ const ASSETS = {
         { name: "러셀 2000", symbol: "RUSSELL:RUT" },
         { name: "코스피", symbol: "KRX:KOSPI" },
         { name: "코스닥", symbol: "KRX:KOSDAQ" },
+        { name: "TOPIX", symbol: "TSE:1308" },
         { name: "니케이 225", symbol: "NI225" },
         { name: "대만 TWINDEX", symbol: "INDEX:TAIEX" },
         { name: "독일 DAX", symbol: "DAX" },
         { name: "영국 FTSE 100", symbol: "UK100" },
+        { name: "STOXX Europe 600", symbol: "SXXP" },
+        { name: "EURO STOXX 50", symbol: "SX5E" },
+        { name: "Italy FTSE MIB", symbol: "FTSEMIB" },
+        { name: "Spain IBEX 35", symbol: "IBEX35" },
+        { name: "Swiss SMI", symbol: "SMI" },
+        { name: "Netherlands AEX", symbol: "AEX" },
+        { name: "OMX Stockholm 30", symbol: "OMXS30" },
         { name: "항셍 지수", symbol: "HSI" },
         { name: "MSCI 신흥국 (EM)", symbol: "EEM" },
         { name: "중국 A50", symbol: "FXI" },
@@ -101,7 +109,14 @@ const INDEX_REGION_GROUPS = [
         items: [
             { name: "독일 DAX", symbol: "DAX" },
             { name: "영국 FTSE 100", symbol: "UK100" },
-            { name: "프랑스 CAC40", symbol: "PX1" }
+            { name: "프랑스 CAC40", symbol: "PX1" },
+            { name: "STOXX Europe 600", symbol: "SXXP" },
+            { name: "EURO STOXX 50", symbol: "SX5E" },
+            { name: "Italy FTSE MIB", symbol: "FTSEMIB" },
+            { name: "Spain IBEX 35", symbol: "IBEX35" },
+            { name: "Swiss SMI", symbol: "SMI" },
+            { name: "Netherlands AEX", symbol: "AEX" },
+            { name: "OMX Stockholm 30", symbol: "OMXS30" }
         ]
     },
         {
@@ -109,9 +124,11 @@ const INDEX_REGION_GROUPS = [
             items: [
                 { name: "코스피", symbol: "KRX:KOSPI" },
                 { name: "코스닥", symbol: "KRX:KOSDAQ" },
+                { name: "TOPIX", symbol: "TSE:1308" },
                 { name: "니케이 225", symbol: "NI225" },
                 { name: "대만 TWINDEX", symbol: "INDEX:TAIEX" },
                 { name: "항셍", symbol: "HSI" },
+                { name: "CSI 300", symbol: "SSE:000300" },
                 { name: "중국 A50", symbol: "FXI" },
                 { name: "인도 니프티 50", symbol: "NIFTY" }
             ]
@@ -221,6 +238,78 @@ const GLOBAL_MARKET_INTERVAL_OPTIONS = [
 ];
 const globalMarketIntervals = Object.fromEntries(GLOBAL_MARKET_CHARTS_LIVE.map(item => [item.id, "5"]));
 const GLOBAL_MARKET_ORDER_KEY = "stanley_global_market_order_v1";
+const PORTFOLIO_CUSTOM_KEY = "stanley_leadership_portfolio_custom_v1";
+const PORTFOLIO_FAVORITES_KEY = "stanley_leadership_portfolio_favorites_v1";
+const PORTFOLIO_REMOVED_KEY = "stanley_leadership_portfolio_removed_v1";
+let portfolioViewTab = "leaders";
+let portfolioSectorFilter = "all";
+let portfolioRankingMetric = "idx5D";
+
+const PORTFOLIO_PERIODS = [
+    { key: "idx1D", label: "1D" },
+    { key: "idx5D", label: "5D" },
+    { key: "idx1M", label: "1M", fallback: "idxMTD" },
+    { key: "idx6M", label: "6M" },
+    { key: "idxYTD", label: "YTD" }
+];
+
+const PORTFOLIO_SECTORS = [
+    { key: "semis", label: "반도체", proxy: "SOXX" },
+    { key: "ai_software", label: "AI/소프트웨어", proxy: "XLK" },
+    { key: "platform", label: "플랫폼/커뮤니케이션", proxy: "META" },
+    { key: "power", label: "전력/인프라", proxy: "CEG" },
+    { key: "defense", label: "방산/우주항공", proxy: "RTX" },
+    { key: "healthcare", label: "헬스케어", proxy: "XLV" },
+    { key: "financials", label: "금융/결제", proxy: "XLF" },
+    { key: "consumer", label: "소비재/럭셔리", proxy: "XLY" },
+    { key: "energy", label: "에너지/원자력", proxy: "XLE" },
+    { key: "materials", label: "소재/금속", proxy: "XLB" }
+];
+
+const PORTFOLIO_DEFAULT_ASSETS = [
+    { symbol: "NVDA", name: "NVIDIA", country: "미국", sector: "semis", thesis: "AI GPU" },
+    { symbol: "TSM", name: "TSMC", country: "대만", sector: "semis", thesis: "파운드리" },
+    { symbol: "ASML", name: "ASML", country: "네덜란드", sector: "semis", thesis: "EUV 장비" },
+    { symbol: "AVGO", name: "Broadcom", country: "미국", sector: "semis", thesis: "AI 네트워크" },
+    { symbol: "AMD", name: "AMD", country: "미국", sector: "semis", thesis: "GPU/CPU" },
+    { symbol: "MSFT", name: "Microsoft", country: "미국", sector: "ai_software", thesis: "AI 클라우드" },
+    { symbol: "GOOGL", name: "Alphabet", country: "미국", sector: "ai_software", thesis: "검색/AI" },
+    { symbol: "SAP", name: "SAP", country: "독일", sector: "ai_software", thesis: "기업용 SW" },
+    { symbol: "META", name: "Meta", country: "미국", sector: "platform", thesis: "광고/AI 플랫폼" },
+    { symbol: "NFLX", name: "Netflix", country: "미국", sector: "platform", thesis: "스트리밍" },
+    { symbol: "AMZN", name: "Amazon", country: "미국", sector: "platform", thesis: "AWS/커머스" },
+    { symbol: "CEG", name: "Constellation Energy", country: "미국", sector: "power", thesis: "원전/전력" },
+    { symbol: "NEE", name: "NextEra Energy", country: "미국", sector: "power", thesis: "전력/재생" },
+    { symbol: "GE", name: "GE Aerospace", country: "미국", sector: "defense", thesis: "항공 엔진" },
+    { symbol: "RTX", name: "RTX", country: "미국", sector: "defense", thesis: "방산/항공" },
+    { symbol: "LLY", name: "Eli Lilly", country: "미국", sector: "healthcare", thesis: "비만치료제" },
+    { symbol: "NVO", name: "Novo Nordisk", country: "덴마크", sector: "healthcare", thesis: "비만치료제" },
+    { symbol: "UNH", name: "UnitedHealth", country: "미국", sector: "healthcare", thesis: "보험/관리의료" },
+    { symbol: "JPM", name: "JPMorgan", country: "미국", sector: "financials", thesis: "대형은행" },
+    { symbol: "V", name: "Visa", country: "미국", sector: "financials", thesis: "결제 네트워크" },
+    { symbol: "COST", name: "Costco", country: "미국", sector: "consumer", thesis: "멤버십 소비" },
+    { symbol: "HD", name: "Home Depot", country: "미국", sector: "consumer", thesis: "주택 소비" },
+    { symbol: "TSLA", name: "Tesla", country: "미국", sector: "consumer", thesis: "전기차/AI" },
+    { symbol: "XOM", name: "Exxon Mobil", country: "미국", sector: "energy", thesis: "에너지 메이저" },
+    { symbol: "CVX", name: "Chevron", country: "미국", sector: "energy", thesis: "에너지 메이저" },
+    { symbol: "FCX", name: "Freeport-McMoRan", country: "미국", sector: "materials", thesis: "구리" },
+    { symbol: "LIN", name: "Linde", country: "영국", sector: "materials", thesis: "산업가스" }
+];
+
+const INDEX_INFO_TOOLTIPS = {
+    "SXXP": "유럽 전체: 영국, 스위스, 유로존을 포함한 유럽 광역 벤치마크입니다.",
+    "SX5E": "유로존 대형주: 유로화를 쓰는 주요 국가의 대형 우량주 흐름을 봅니다.",
+    "DAX": "독일 제조/수출: 자동차, 산업재, 화학 등 독일 수출 경기 민감도를 봅니다.",
+    "UK100": "영국 에너지/금융/원자재: 글로벌 원자재와 배당주 성격이 강한 영국 대형주 지수입니다.",
+    "PX1": "프랑스 럭셔리/산업: LVMH 같은 명품 소비와 산업재 흐름을 함께 봅니다.",
+    "FTSEMIB": "이탈리아 은행/산업: 유럽 은행주와 경기민감 산업재 흐름을 보기 좋습니다.",
+    "IBEX35": "스페인 은행/전력/인프라: 금융, 전력, 인프라 기업의 흐름을 반영합니다.",
+    "SMI": "스위스 헬스케어/필수소비재: 로슈, 노바티스, 네슬레 중심의 방어적 성격을 봅니다.",
+    "AEX": "ASML 중심 유럽 기술주: 네덜란드 대형주와 유럽 반도체 장비 민감도를 봅니다.",
+    "OMXS30": "북유럽 산업재/은행: 스웨덴 대형 산업재, 금융, 제조업 흐름을 봅니다.",
+    "TSE:1308": "일본 전체시장: 니케이225보다 일본 증시 전반의 흐름을 넓게 봅니다.",
+    "SSE:000300": "중국 본토 대형주: 상하이와 선전의 대표 대형주 흐름을 봅니다."
+};
 
 function getOrderedGlobalMarketCharts() {
     let savedOrder = [];
@@ -562,6 +651,7 @@ document.addEventListener("DOMContentLoaded", () => {
             chartGrid.className = ""; // Reset
             if (currentMode === "report") chartGrid.classList.add("report-view");
             if (currentMode === "global") chartGrid.classList.add("global-view");
+            if (currentMode === "portfolio") chartGrid.classList.add("portfolio-view");
             if (currentMode === "intel") chartGrid.classList.add("report-view");
             if (currentMode === "options") chartGrid.classList.add("options-view");
             if (currentMode === "gurus") chartGrid.classList.add("gurus-view");
@@ -572,6 +662,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 renderOptionsView();
             } else if (currentMode === "global") {
                 renderGlobalView();
+            } else if (currentMode === "portfolio") {
+                renderPortfolioView();
             } else if (currentMode === "intel") {
                 renderIntelView();
             } else {
@@ -597,6 +689,8 @@ function rerenderCurrentMode(animate = true) {
         renderOptionsView();
     } else if (currentMode === "global") {
         renderGlobalView();
+    } else if (currentMode === "portfolio") {
+        renderPortfolioView();
     } else if (currentMode === "intel") {
         renderIntelView();
     } else {
@@ -1671,7 +1765,7 @@ function sortModeButtons() {
     const controls = document.querySelector(".controls");
     if (!controls) return;
 
-    const preferredOrder = ["report", "global", "intel", "options", "gurus"];
+    const preferredOrder = ["report", "global", "portfolio", "intel", "options", "gurus"];
     const modeButtons = Array.from(controls.querySelectorAll(".mode-btn"));
     const anchor = Array.from(controls.children).find(child => !child.classList.contains("mode-btn"));
     const fragment = document.createDocumentFragment();
@@ -2821,6 +2915,17 @@ function createReportSignalBadges(data) {
     return badges.join("");
 }
 
+function createIndexInfoTooltip(asset) {
+    const info = INDEX_INFO_TOOLTIPS[asset.symbol];
+    if (!info) return "";
+    return `
+        <span class="trading-info-tooltip">
+            <button type="button" class="trading-info-btn" aria-label="${escapeHtml(asset.name)} 설명">?</button>
+            <span class="trading-info-bubble" role="tooltip">${escapeHtml(info)}</span>
+        </span>
+    `;
+}
+
 function renderDenseTradingRows(assetList, categoryKey = "") {
     const rowsHtml = assetList.map(asset => {
         const data = window.DASHBOARD_DATA.assets[asset.symbol];
@@ -2839,12 +2944,14 @@ function renderDenseTradingRows(assetList, categoryKey = "") {
         };
 
         const signalBadges = createReportSignalBadges(data);
+        const infoTooltip = createIndexInfoTooltip(asset);
 
         return `
             <tr>
                 <td>
                     <span class="trading-name-cell">
                         <a href="https://www.tradingview.com/chart/?symbol=${encodeURIComponent(asset.symbol)}" target="_blank" class="report-tv-link">${asset.name}</a>
+                        ${infoTooltip}
                         ${signalBadges}
                     </span>
                 </td>
@@ -2917,6 +3024,435 @@ function createGroupedIndexBoard(title, regionGroups) {
             </div>
         </div>
     `;
+}
+
+function getPortfolioCustomAssets() {
+    try {
+        const saved = JSON.parse(localStorage.getItem(PORTFOLIO_CUSTOM_KEY) || "[]");
+        return Array.isArray(saved) ? saved.filter(item => item && item.symbol) : [];
+    } catch (error) {
+        return [];
+    }
+}
+
+function savePortfolioCustomAssets(items) {
+    localStorage.setItem(PORTFOLIO_CUSTOM_KEY, JSON.stringify(items));
+}
+
+function getPortfolioFavorites() {
+    try {
+        const saved = JSON.parse(localStorage.getItem(PORTFOLIO_FAVORITES_KEY) || "[]");
+        return new Set(Array.isArray(saved) ? saved : []);
+    } catch (error) {
+        return new Set();
+    }
+}
+
+function savePortfolioFavorites(favorites) {
+    localStorage.setItem(PORTFOLIO_FAVORITES_KEY, JSON.stringify(Array.from(favorites)));
+}
+
+function getPortfolioRemovedSymbols() {
+    try {
+        const saved = JSON.parse(localStorage.getItem(PORTFOLIO_REMOVED_KEY) || "[]");
+        return new Set(Array.isArray(saved) ? saved : []);
+    } catch (error) {
+        return new Set();
+    }
+}
+
+function savePortfolioRemovedSymbols(symbols) {
+    localStorage.setItem(PORTFOLIO_REMOVED_KEY, JSON.stringify(Array.from(symbols)));
+}
+
+function getPortfolioAssets() {
+    const bySymbol = new Map();
+    const removed = getPortfolioRemovedSymbols();
+    [...PORTFOLIO_DEFAULT_ASSETS, ...getPortfolioCustomAssets()].forEach(item => {
+        const symbol = String(item.symbol || "").trim().toUpperCase();
+        if (!symbol || removed.has(symbol)) return;
+        bySymbol.set(symbol, {
+            ...item,
+            symbol,
+            sector: item.sector || "ai_software",
+            country: item.country || "직접추가",
+            thesis: item.thesis || "사용자 추가"
+        });
+    });
+    return Array.from(bySymbol.values());
+}
+
+function getPortfolioSectorLabel(key) {
+    return PORTFOLIO_SECTORS.find(item => item.key === key)?.label || key || "기타";
+}
+
+function getPortfolioMetric(data, period) {
+    if (!data) return NaN;
+    const primary = toNumber(data[period.key], NaN);
+    if (Number.isFinite(primary)) return primary;
+    return period.fallback ? toNumber(data[period.fallback], NaN) : NaN;
+}
+
+function renderPortfolioMetricCell(data, period) {
+    const value = getPortfolioMetric(data, period);
+    if (!Number.isFinite(value)) return '<td class="val-neutral">--</td>';
+    const cls = getKRColorClass(value, period.key === "idx1D" ? 2 : 5);
+    const prefix = value > 0 ? "+" : "";
+    return `<td class="${cls}">${prefix}${value.toFixed(2)}%</td>`;
+}
+
+function getPortfolioLeadershipScore(asset) {
+    const data = getAssetSnapshot(asset.symbol);
+    if (!data) return 0;
+    const weights = { idx5D: 0.2, idx1M: 0.3, idx6M: 0.3, idxYTD: 0.2 };
+    const raw = Object.entries(weights).reduce((sum, [key, weight]) => {
+        const period = PORTFOLIO_PERIODS.find(item => item.key === key);
+        const value = getPortfolioMetric(data, period || { key });
+        return sum + (Number.isFinite(value) ? value * weight : 0);
+    }, 0);
+    return Math.max(0, Math.min(100, Math.round(50 + raw * 2)));
+}
+
+function getPortfolioStatus(asset) {
+    const data = getAssetSnapshot(asset.symbol);
+    if (!data) return "데이터 대기";
+    const d5 = getPortfolioMetric(data, { key: "idx5D" });
+    const m1 = getPortfolioMetric(data, { key: "idx1M", fallback: "idxMTD" });
+    const m6 = getPortfolioMetric(data, { key: "idx6M" });
+    const ytd = getPortfolioMetric(data, { key: "idxYTD" });
+    if (d5 > 3 && m1 > 5) return "단기 점화";
+    if (m1 > 5 && m6 > 12) return "추세 주도";
+    if (m6 > 15 && ytd > 10) return "올해 주도";
+    if (d5 < -3 && m1 < 0) return "이탈";
+    if (d5 > 0 && m1 < 0) return "회복 후보";
+    return "중립";
+}
+
+function renderPortfolioRows(assets, { removable = false } = {}) {
+    const favorites = getPortfolioFavorites();
+    return assets.map(asset => {
+        const data = getAssetSnapshot(asset.symbol);
+        const score = getPortfolioLeadershipScore(asset);
+        const tvLink = `https://www.tradingview.com/chart/?symbol=${encodeURIComponent(asset.symbol)}`;
+        return `
+            <tr>
+                <td>
+                    <button type="button" class="portfolio-icon-btn ${favorites.has(asset.symbol) ? "active" : ""}" onclick="togglePortfolioFavorite('${escapeHtml(asset.symbol)}')" title="관심종목">★</button>
+                </td>
+                <td>
+                    <a href="${tvLink}" target="_blank" class="report-tv-link">${escapeHtml(asset.symbol)}</a>
+                    <span class="portfolio-name">${escapeHtml(asset.name || asset.symbol)}</span>
+                </td>
+                <td>${escapeHtml(asset.country || "-")}</td>
+                <td>${escapeHtml(getPortfolioSectorLabel(asset.sector))}</td>
+                <td>${escapeHtml(asset.thesis || "-")}</td>
+                <td class="portfolio-price">${data?.price || "--"}</td>
+                ${PORTFOLIO_PERIODS.map(period => renderPortfolioMetricCell(data, period)).join("")}
+                <td><span class="portfolio-score">${score}</span></td>
+                <td><span class="portfolio-status">${escapeHtml(getPortfolioStatus(asset))}</span></td>
+                <td>
+                    <button type="button" class="portfolio-remove-btn" onclick="removePortfolioAsset('${escapeHtml(asset.symbol)}')">삭제</button>
+                </td>
+            </tr>
+        `;
+    }).join("");
+}
+
+function renderPortfolioTable(assets, emptyText = "표시할 종목이 없습니다.") {
+    const rowsHtml = renderPortfolioRows(assets);
+    return `
+        <div class="portfolio-table-wrap">
+            <table class="portfolio-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>종목</th>
+                        <th>국가</th>
+                        <th>섹터</th>
+                        <th>포인트</th>
+                        <th>현재가</th>
+                        <th>등락률</th>
+                        <th>5D</th>
+                        <th>1M</th>
+                        <th>6M</th>
+                        <th>YTD</th>
+                        <th>점수</th>
+                        <th>상태</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>${rowsHtml || `<tr><td colspan="14" class="portfolio-empty">${emptyText}</td></tr>`}</tbody>
+            </table>
+        </div>
+    `;
+}
+
+function getPortfolioSectorRows() {
+    return PORTFOLIO_SECTORS.map(sector => {
+        const members = getPortfolioAssets().filter(asset => asset.sector === sector.key);
+        const scored = members.map(asset => ({
+            asset,
+            score: getPortfolioLeadershipScore(asset),
+            data: getAssetSnapshot(asset.symbol)
+        })).filter(item => item.data);
+        const avgScore = scored.length ? Math.round(average(scored.map(item => item.score))) : 0;
+        const leader = scored.sort((a, b) => b.score - a.score)[0]?.asset;
+        const proxyData = getAssetSnapshot(sector.proxy);
+        return `
+            <tr>
+                <td>${escapeHtml(sector.label)}</td>
+                <td>${escapeHtml(sector.proxy)}</td>
+                <td>${proxyData?.price || "--"}</td>
+                ${PORTFOLIO_PERIODS.map(period => renderPortfolioMetricCell(proxyData, period)).join("")}
+                <td><span class="portfolio-score">${avgScore}</span></td>
+                <td>${leader ? `${escapeHtml(leader.symbol)} · ${escapeHtml(leader.name)}` : "--"}</td>
+            </tr>
+        `;
+    }).join("");
+}
+
+function renderPortfolioLeadersTab() {
+    const topAssets = getPortfolioAssets()
+        .map(asset => ({ asset, score: getPortfolioLeadershipScore(asset) }))
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 8)
+        .map(item => item.asset);
+
+    return `
+        <section class="portfolio-panel">
+            <div class="portfolio-panel-head">
+                <h3>주도 섹터</h3>
+                <span>섹터 ETF/프록시와 대표 주도주를 같이 봅니다.</span>
+            </div>
+            <div class="portfolio-table-wrap">
+                <table class="portfolio-table portfolio-sector-table">
+                    <thead>
+                        <tr>
+                            <th>섹터</th>
+                            <th>대표</th>
+                            <th>현재가</th>
+                            <th>등락률</th>
+                            <th>5D</th>
+                            <th>1M</th>
+                            <th>6M</th>
+                            <th>YTD</th>
+                            <th>점수</th>
+                            <th>대표 주도주</th>
+                        </tr>
+                    </thead>
+                    <tbody>${getPortfolioSectorRows()}</tbody>
+                </table>
+            </div>
+        </section>
+        <section class="portfolio-panel">
+            <div class="portfolio-panel-head">
+                <h3>종목 리더십 Top 8</h3>
+                <span>5D, 1M, 6M, YTD를 가중해 계산합니다.</span>
+            </div>
+            ${renderPortfolioTable(topAssets)}
+        </section>
+    `;
+}
+
+function renderPortfolioBySectorTab() {
+    const sectors = [{ key: "all", label: "전체" }, ...PORTFOLIO_SECTORS];
+    const filtered = getPortfolioAssets()
+        .filter(asset => portfolioSectorFilter === "all" || asset.sector === portfolioSectorFilter)
+        .sort((a, b) => getPortfolioLeadershipScore(b) - getPortfolioLeadershipScore(a));
+    return `
+        <section class="portfolio-panel">
+            <div class="portfolio-filter-row">
+                ${sectors.map(sector => `
+                    <button type="button" class="portfolio-chip ${portfolioSectorFilter === sector.key ? "active" : ""}" onclick="setPortfolioSectorFilter('${sector.key}')">${escapeHtml(sector.label)}</button>
+                `).join("")}
+            </div>
+            ${renderPortfolioTable(filtered)}
+        </section>
+    `;
+}
+
+function renderPortfolioRankingTab() {
+    const periods = PORTFOLIO_PERIODS;
+    const period = periods.find(item => item.key === portfolioRankingMetric) || periods[1];
+    const ranked = getPortfolioAssets()
+        .map(asset => ({ asset, value: getPortfolioMetric(getAssetSnapshot(asset.symbol), period) }))
+        .filter(item => Number.isFinite(item.value))
+        .sort((a, b) => b.value - a.value);
+    return `
+        <section class="portfolio-panel">
+            <div class="portfolio-filter-row">
+                ${periods.map(item => `
+                    <button type="button" class="portfolio-chip ${portfolioRankingMetric === item.key ? "active" : ""}" onclick="setPortfolioRankingMetric('${item.key}')">${item.label}</button>
+                `).join("")}
+            </div>
+            ${renderPortfolioTable(ranked.map(item => item.asset), "해당 기간 데이터가 없습니다.")}
+        </section>
+    `;
+}
+
+function renderPortfolioCountryTab() {
+    const byCountry = new Map();
+    getPortfolioAssets().forEach(asset => {
+        const key = asset.country || "기타";
+        if (!byCountry.has(key)) byCountry.set(key, []);
+        byCountry.get(key).push(asset);
+    });
+    return Array.from(byCountry.entries()).sort((a, b) => a[0].localeCompare(b[0])).map(([country, assets]) => `
+        <section class="portfolio-panel">
+            <div class="portfolio-panel-head">
+                <h3>${escapeHtml(country)}</h3>
+                <span>${assets.length}개 종목</span>
+            </div>
+            ${renderPortfolioTable(assets.sort((a, b) => getPortfolioLeadershipScore(b) - getPortfolioLeadershipScore(a)))}
+        </section>
+    `).join("");
+}
+
+function renderPortfolioFavoritesTab() {
+    const favorites = getPortfolioFavorites();
+    const assets = getPortfolioAssets()
+        .filter(asset => favorites.has(asset.symbol))
+        .sort((a, b) => getPortfolioLeadershipScore(b) - getPortfolioLeadershipScore(a));
+    return `
+        <section class="portfolio-panel">
+            ${renderPortfolioTable(assets, "관심종목이 없습니다. 별 버튼을 눌러 추가하세요.")}
+        </section>
+    `;
+}
+
+function renderPortfolioAddForm() {
+    const sectorOptions = PORTFOLIO_SECTORS.map(sector => `<option value="${sector.key}">${escapeHtml(sector.label)}</option>`).join("");
+    return `
+        <form id="portfolio-add-form" class="portfolio-add-form">
+            <input name="symbol" placeholder="티커 예: NVDA" required>
+            <input name="name" placeholder="종목명">
+            <input name="country" placeholder="국가">
+            <select name="sector">${sectorOptions}</select>
+            <input name="thesis" placeholder="관찰 포인트">
+            <button type="submit">추가</button>
+        </form>
+    `;
+}
+
+function renderPortfolioView() {
+    const mainGrid = document.getElementById("chart-grid");
+    if (!mainGrid) return;
+    mainGrid.className = "portfolio-view";
+
+    const tabs = [
+        { key: "leaders", label: "주도 섹터" },
+        { key: "sectors", label: "섹터별 종목" },
+        { key: "ranking", label: "기간별 랭킹" },
+        { key: "countries", label: "국가별" },
+        { key: "favorites", label: "관심종목" }
+    ];
+    const assets = getPortfolioAssets();
+    const availableCount = assets.filter(asset => getAssetSnapshot(asset.symbol)).length;
+    const activeBody = portfolioViewTab === "sectors"
+        ? renderPortfolioBySectorTab()
+        : portfolioViewTab === "ranking"
+            ? renderPortfolioRankingTab()
+            : portfolioViewTab === "countries"
+                ? renderPortfolioCountryTab()
+                : portfolioViewTab === "favorites"
+                    ? renderPortfolioFavoritesTab()
+                    : renderPortfolioLeadersTab();
+
+    mainGrid.innerHTML = `
+        <section class="portfolio-hero">
+            <div>
+                <span class="section-kicker">Global Leadership Portfolio</span>
+                <h2>섹터 주도주 관찰 보드</h2>
+                <p>현재가, 등락률, 5D, 1M, 6M, YTD로 전세계 주도 섹터와 종목을 추적합니다.</p>
+            </div>
+            <div class="portfolio-summary">
+                <div><span>종목</span><strong>${assets.length}</strong></div>
+                <div><span>데이터</span><strong>${availableCount}</strong></div>
+                <div><span>섹터</span><strong>${PORTFOLIO_SECTORS.length}</strong></div>
+            </div>
+        </section>
+        <section class="portfolio-controls">
+            <div class="portfolio-tabs">
+                ${tabs.map(tab => `<button type="button" class="portfolio-tab ${portfolioViewTab === tab.key ? "active" : ""}" onclick="setPortfolioTab('${tab.key}')">${tab.label}</button>`).join("")}
+            </div>
+            ${renderPortfolioAddForm()}
+        </section>
+        <div class="portfolio-body">${activeBody}</div>
+    `;
+
+    const form = document.getElementById("portfolio-add-form");
+    if (form) {
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const formData = new FormData(form);
+            addPortfolioAsset({
+                symbol: formData.get("symbol"),
+                name: formData.get("name"),
+                country: formData.get("country"),
+                sector: formData.get("sector"),
+                thesis: formData.get("thesis")
+            });
+        });
+    }
+}
+
+function setPortfolioTab(tab) {
+    portfolioViewTab = tab;
+    renderPortfolioView();
+}
+
+function setPortfolioSectorFilter(sector) {
+    portfolioSectorFilter = sector;
+    renderPortfolioView();
+}
+
+function setPortfolioRankingMetric(metric) {
+    portfolioRankingMetric = metric;
+    renderPortfolioView();
+}
+
+function addPortfolioAsset(asset) {
+    const symbol = String(asset.symbol || "").trim().toUpperCase();
+    if (!symbol) return;
+    const custom = getPortfolioCustomAssets().filter(item => item.symbol !== symbol);
+    const defaultAsset = PORTFOLIO_DEFAULT_ASSETS.find(item => item.symbol === symbol);
+    const removed = getPortfolioRemovedSymbols();
+    removed.delete(symbol);
+    custom.push({
+        symbol,
+        name: String(asset.name || defaultAsset?.name || symbol).trim(),
+        country: String(asset.country || defaultAsset?.country || "직접추가").trim(),
+        sector: asset.sector || defaultAsset?.sector || "ai_software",
+        thesis: String(asset.thesis || defaultAsset?.thesis || "사용자 추가").trim()
+    });
+    savePortfolioRemovedSymbols(removed);
+    savePortfolioCustomAssets(custom);
+    portfolioViewTab = "sectors";
+    renderPortfolioView();
+}
+
+function removePortfolioAsset(symbol) {
+    const cleanSymbol = String(symbol || "").trim().toUpperCase();
+    savePortfolioCustomAssets(getPortfolioCustomAssets().filter(item => item.symbol !== cleanSymbol));
+    const removed = getPortfolioRemovedSymbols();
+    removed.add(cleanSymbol);
+    savePortfolioRemovedSymbols(removed);
+    const favorites = getPortfolioFavorites();
+    favorites.delete(cleanSymbol);
+    savePortfolioFavorites(favorites);
+    renderPortfolioView();
+}
+
+function togglePortfolioFavorite(symbol) {
+    const cleanSymbol = String(symbol || "").trim().toUpperCase();
+    const favorites = getPortfolioFavorites();
+    if (favorites.has(cleanSymbol)) {
+        favorites.delete(cleanSymbol);
+    } else {
+        favorites.add(cleanSymbol);
+    }
+    savePortfolioFavorites(favorites);
+    renderPortfolioView();
 }
 
 function createTradingRankingSection() {
