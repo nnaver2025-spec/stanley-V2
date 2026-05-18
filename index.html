@@ -59,6 +59,22 @@
         <span id="last-updated-text">Updating...</span> (<span id="refresh-timer">0:10</span>) · <span id="market-session-text">시장 상태 확인 중...</span>
     </div>
 
+    <div id="refresh-health-banner" class="refresh-health-banner" hidden>
+        <div class="refresh-health-main">
+            <span class="refresh-health-pill">Refresh warning</span>
+            <span id="refresh-health-text"></span>
+            <div class="refresh-health-actions">
+                <button id="refresh-health-retry" class="refresh-health-button" type="button">다시 연결 확인</button>
+                <button id="refresh-health-guide-toggle" class="refresh-health-button secondary" type="button" aria-expanded="false" aria-controls="refresh-health-guide">실행 방법</button>
+            </div>
+        </div>
+        <div id="refresh-health-guide" class="refresh-health-guide" hidden>
+            <strong>서버 다시 켜기</strong>
+            <span>자동 시작은 <code>Install_AutoStart_Server.bat</code> 또는 <code>Install_AutoStart_Server.command</code>를 한 번 실행하세요.</span>
+            <span>수동 실행은 <code>Run_Druckenmiller.bat</code> 또는 <code>python server.py</code>를 사용하세요.</span>
+        </div>
+    </div>
+
     <!-- Macro Knowledge Popover -->
     <div id="popover-overlay" class="popover-overlay"></div>
     <div id="macro-popover" class="macro-popover">

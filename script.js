@@ -460,7 +460,10 @@ const toggleSidebarBtn = document.getElementById("toggle-sidebar-btn");
 const themeToggleBtn = document.getElementById("theme-toggle-btn");
 const DATA_BOOT_TIMEOUT_MS = 30000;
 const DATA_BOOT_RETRY_MS = 1000;
+const BACKEND_STATUS_POLL_MS = 15000;
+const BACKEND_STATUS_TIMEOUT_MS = 4000;
 const OPTIONS_DEFAULT_TICKER = "AAPL";
+let backendStatusPollHandle = null;
 
 const optionsViewState = {
     ticker: OPTIONS_DEFAULT_TICKER,
@@ -617,6 +620,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     bootstrapDashboardData(initData);
+    bindRefreshHealthControls();
+    startBackendStatusPolling();
     // Add popover dismissal listeners
     const overlay = document.getElementById('popover-overlay');
     const closeBtn = document.getElementById('close-popover');
@@ -782,6 +787,7 @@ function refreshDataSilently() {
                 return;
             }
             displayMetadata();
+            setRefreshStatusBanner();
             syncIntelPredictionHistory();
             // Global view: skip full re-render to remove 1-minute flicker motion.
             if (currentMode !== "global") {
@@ -789,10 +795,15 @@ function refreshDataSilently() {
             }
             renderSentiment();
             renderPlaybookSidebar();
+            void checkBackendStatus();
             console.log("Data refreshed silently at " + new Date().toLocaleTimeString());
         },
         onError: () => {
-            renderDataLoadFailure("자동 새로고침 중 data.js 로드에 실패했습니다.");
+            setRefreshStatusBanner({
+                tone: "warning",
+                message: "자동 새로고침에 실패했습니다. 서버 상태를 확인하는 중입니다."
+            });
+            void checkBackendStatus();
         }
     });
 }
@@ -863,6 +874,156 @@ function displayMetadata() {
     if (sessionText) {
         sessionText.textContent = getMarketSessionSummary();
     }
+}
+
+function getLastUpdatedMetadataLabel() {
+    if (window.DASHBOARD_DATA && window.DASHBOARD_DATA.last_updated) {
+        return `마지막 데이터: ${window.DASHBOARD_DATA.last_updated}`;
+    }
+    return "마지막 데이터 시각을 아직 확인하지 못했습니다.";
+}
+
+function setRefreshStatusBanner({ tone = "ok", message = "" } = {}) {
+    const banner = document.getElementById("refresh-health-banner");
+    const bannerText = document.getElementById("refresh-health-text");
+    const updatedText = document.getElementById("last-updated-text");
+
+    if (updatedText) {
+        updatedText.classList.toggle("metadata-stale", tone === "warning");
+    }
+    if (!banner || !bannerText) return;
+
+    if (tone === "warning" && message) {
+        bannerText.textContent = message;
+        banner.hidden = false;
+        banner.classList.add("visible");
+        return;
+    }
+
+    bannerText.textContent = "";
+    banner.hidden = true;
+    banner.classList.remove("visible");
+    setRefreshGuideVisible(false);
+    resetRefreshRetryButton();
+}
+
+function setRefreshGuideVisible(isVisible) {
+    const guide = document.getElementById("refresh-health-guide");
+    const guideButton = document.getElementById("refresh-health-guide-toggle");
+    if (!guide || !guideButton) return;
+
+    guide.hidden = !isVisible;
+    guideButton.setAttribute("aria-expanded", String(isVisible));
+}
+
+function resetRefreshRetryButton() {
+    const retryButton = document.getElementById("refresh-health-retry");
+    if (!retryButton) return;
+
+    retryButton.disabled = false;
+    retryButton.textContent = "다시 연결 확인";
+}
+
+function bindRefreshHealthControls() {
+    const retryButton = document.getElementById("refresh-health-retry");
+    const guideButton = document.getElementById("refresh-health-guide-toggle");
+
+    if (retryButton) {
+        retryButton.addEventListener("click", async () => {
+            retryButton.disabled = true;
+            retryButton.textContent = "확인 중";
+            setRefreshStatusBanner({
+                tone: "warning",
+                message: `서버 연결을 다시 확인하는 중입니다. ${getLastUpdatedMetadataLabel()}`
+            });
+
+            const isConnected = await checkBackendStatus();
+            if (!isConnected) {
+                resetRefreshRetryButton();
+            }
+        });
+    }
+
+    if (guideButton) {
+        guideButton.addEventListener("click", () => {
+            const isExpanded = guideButton.getAttribute("aria-expanded") === "true";
+            setRefreshGuideVisible(!isExpanded);
+        });
+    }
+}
+
+function getBackendStatusUrls() {
+    const cacheBust = Date.now();
+    const urls = [`/api/status?t=${cacheBust}`];
+
+    if (
+        window.location.protocol !== "http:" ||
+        !["127.0.0.1", "localhost"].includes(window.location.hostname) ||
+        window.location.port !== "8080"
+    ) {
+        urls.push(`http://127.0.0.1:8080/api/status?t=${cacheBust}`);
+    }
+
+    return [...new Set(urls)];
+}
+
+async function fetchBackendStatus() {
+    let lastError = null;
+
+    for (const url of getBackendStatusUrls()) {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), BACKEND_STATUS_TIMEOUT_MS);
+
+        try {
+            const response = await fetch(url, {
+                cache: "no-store",
+                signal: controller.signal
+            });
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
+
+            return await response.json();
+        } catch (error) {
+            lastError = error;
+        } finally {
+            clearTimeout(timeoutId);
+        }
+    }
+
+    throw lastError || new Error("Backend status check failed");
+}
+
+async function checkBackendStatus() {
+    try {
+        const status = await fetchBackendStatus();
+        if (!status.data_exists) {
+            setRefreshStatusBanner({
+                tone: "warning",
+                message: `자동 갱신 서버는 연결되지만 data.js가 없습니다. ${getLastUpdatedMetadataLabel()}`
+            });
+            return false;
+        }
+
+        setRefreshStatusBanner();
+        return true;
+    } catch (error) {
+        setRefreshStatusBanner({
+            tone: "warning",
+            message: `자동 갱신 서버 연결이 끊겼습니다. ${getLastUpdatedMetadataLabel()} server.py를 다시 실행해 주세요.`
+        });
+        return false;
+    }
+}
+
+function startBackendStatusPolling() {
+    void checkBackendStatus();
+    if (backendStatusPollHandle) {
+        clearInterval(backendStatusPollHandle);
+    }
+    backendStatusPollHandle = setInterval(() => {
+        void checkBackendStatus();
+    }, BACKEND_STATUS_POLL_MS);
 }
 
 function loadTickerTape() {

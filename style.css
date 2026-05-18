@@ -98,6 +98,10 @@ header {
     font-weight: 600;
 }
 
+#last-updated-text.metadata-stale {
+    color: var(--danger);
+}
+
 .controls {
     display: flex;
     gap: 2rem;
@@ -3174,6 +3178,139 @@ body:not(.dark-theme) .options-alert {
     z-index: 1000;
     font-family: 'Inter', sans-serif;
     letter-spacing: 0.5px;
+}
+
+.refresh-health-banner {
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    max-width: min(640px, calc(100vw - 40px));
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    background: rgba(239, 68, 68, 0.12);
+    color: var(--text-primary);
+    box-shadow: var(--card-shadow);
+    z-index: 1001;
+}
+
+.refresh-health-banner.visible {
+    display: inline-flex;
+}
+
+.refresh-health-main {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.refresh-health-pill {
+    flex: 0 0 auto;
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--danger);
+}
+
+#refresh-health-text {
+    flex: 1 1 auto;
+    min-width: 180px;
+    font-size: 0.68rem;
+    line-height: 1.4;
+}
+
+.refresh-health-actions {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 6px;
+}
+
+.refresh-health-button {
+    border: 1px solid rgba(239, 68, 68, 0.42);
+    border-radius: 8px;
+    background: var(--danger);
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.68rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 8px 10px;
+    white-space: nowrap;
+    transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
+}
+
+.refresh-health-button:hover {
+    transform: translateY(-1px);
+}
+
+.refresh-health-button:disabled {
+    cursor: wait;
+    opacity: 0.65;
+    transform: none;
+}
+
+.refresh-health-button.secondary {
+    background: transparent;
+    color: var(--danger);
+}
+
+.refresh-health-guide {
+    border-top: 1px solid rgba(239, 68, 68, 0.24);
+    color: var(--text-primary);
+    display: grid;
+    gap: 4px;
+    font-size: 0.7rem;
+    line-height: 1.45;
+    padding-top: 8px;
+}
+
+.refresh-health-guide[hidden] {
+    display: none;
+}
+
+.refresh-health-guide code {
+    border: 1px solid rgba(239, 68, 68, 0.22);
+    border-radius: 6px;
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--text-primary);
+    font-family: 'SF Mono', 'Cascadia Code', monospace;
+    padding: 1px 5px;
+}
+
+body:not(.dark-theme) .refresh-health-banner {
+    background: #fff1f2;
+    border-color: #fda4af;
+}
+
+@media (max-width: 720px) {
+    .refresh-health-banner {
+        left: 12px;
+        right: 12px;
+        bottom: 36px;
+        max-width: none;
+    }
+
+    .refresh-health-main {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    #refresh-health-text {
+        min-width: 0;
+    }
+
+    .refresh-health-actions {
+        width: 100%;
+    }
+
+    .refresh-health-button {
+        flex: 1 1 0;
+    }
 }
 
 /* Macro Knowledge Popover */

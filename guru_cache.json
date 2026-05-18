@@ -3,61 +3,61 @@
     "name": "Stan Druckenmiller",
     "firm": "Duquesne Family Office",
     "whale_url": "https://whalewisdom.com/filer/duquesne-family-office-llc",
-    "sec_url": "https://www.sec.gov/Archives/edgar/data/1536411/000153641126000002/0001536411-26-000002-index.htm",
+    "sec_url": "https://www.sec.gov/Archives/edgar/data/1536411/000153641126000004/0001536411-26-000004-index.htm",
     "source": "SEC 13F",
-    "filed_at": "2026-02-17",
-    "period_of_report": "12-31-2025",
-    "previous_period_of_report": "09-30-2025",
+    "filed_at": "2026-05-15",
+    "period_of_report": "03-31-2026",
+    "previous_period_of_report": "12-31-2025",
     "holdings": [
       {
         "symbol": "NTRA",
         "name": "Natera Inc",
         "issuer": "Natera Inc",
         "class_title": "COM",
-        "weight": "13.6%",
+        "weight": "20.9%",
         "change_label": "확대",
         "change_class": "is-up",
-        "change_delta": "+0.5%p"
-      },
-      {
-        "symbol": "XLF",
-        "name": "Financial Select Sector SPDR Fund",
-        "issuer": "Select Sector Spdr Tr",
-        "class_title": "STATE STREET FIN",
-        "weight": "7.1%",
-        "change_label": "신규",
-        "change_class": "is-new",
-        "change_delta": ""
+        "change_delta": "+7.2%p"
       },
       {
         "symbol": "INSM",
         "name": "Insmed Inc",
         "issuer": "Insmed Inc",
         "class_title": "COM PAR $.01",
-        "weight": "6.1%",
-        "change_label": "축소",
-        "change_class": "is-down",
-        "change_delta": "-2.8%p"
+        "weight": "6.4%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+0.3%p"
       },
       {
-        "symbol": "RSP",
-        "name": "Invesco S&P 500 Equal Weight ETF",
-        "issuer": "Invesco Exchange Traded Fd T",
-        "class_title": "S&P500 EQL WGT",
-        "weight": "5.3%",
+        "symbol": null,
+        "name": "Taiwan Semiconductor Manufac",
+        "issuer": "Taiwan Semiconductor Manufac",
+        "class_title": "SPONSORED ADS",
+        "weight": "5.7%",
         "change_label": "신규",
         "change_class": "is-new",
         "change_delta": ""
       },
       {
-        "symbol": "TEVA",
-        "name": "Teva Pharmaceutical Industries Ltd",
-        "issuer": "Teva Pharmaceutical Inds Ltd",
-        "class_title": "SPONSORED ADS",
-        "weight": "4.3%",
-        "change_label": "축소",
-        "change_class": "is-down",
-        "change_delta": "-4.2%p"
+        "symbol": "YPF",
+        "name": "YPF SOCIEDAD ANONIMA",
+        "issuer": "Ypf Sociedad Anonima",
+        "class_title": "SPON ADR CL D",
+        "weight": "5.1%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+4.6%p"
+      },
+      {
+        "symbol": "EWZ",
+        "name": "iShares MSCI Brazil ETF",
+        "issuer": "Ishares Inc",
+        "class_title": "MSCI BRAZIL ETF",
+        "weight": "4.5%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+1.8%p"
       }
     ]
   },
@@ -65,61 +65,61 @@
     "name": "Bill Ackman",
     "firm": "Pershing Square",
     "whale_url": "https://whalewisdom.com/filer/pershing-square-capital-management-l-p",
-    "sec_url": "https://www.sec.gov/Archives/edgar/data/1336528/000117266126001091/0001172661-26-001091-index.htm",
+    "sec_url": "https://www.sec.gov/Archives/edgar/data/1336528/000117266126002336/0001172661-26-002336-index.htm",
     "source": "SEC 13F",
-    "filed_at": "2026-02-17",
-    "period_of_report": "12-31-2025",
-    "previous_period_of_report": "09-30-2025",
+    "filed_at": "2026-05-15",
+    "period_of_report": "03-31-2026",
+    "previous_period_of_report": "12-31-2025",
     "holdings": [
       {
         "symbol": "BN",
         "name": "Brookfield Corp",
         "issuer": "BROOKFIELD CORP",
         "class_title": "CL A LTD VT SH",
-        "weight": "18.1%",
+        "weight": "17.6%",
         "change_label": "축소",
         "change_class": "is-down",
-        "change_delta": "-1.1%p"
-      },
-      {
-        "symbol": "UBER",
-        "name": "Uber Technologies, Inc",
-        "issuer": "UBER TECHNOLOGIES INC",
-        "class_title": "COM",
-        "weight": "15.9%",
-        "change_label": "축소",
-        "change_class": "is-down",
-        "change_delta": "-4.4%p"
+        "change_delta": "-0.5%p"
       },
       {
         "symbol": "AMZN",
         "name": "AMAZON COM INC",
         "issuer": "AMAZON COM INC",
         "class_title": "COM",
-        "weight": "14.3%",
+        "weight": "17.4%",
         "change_label": "확대",
         "change_class": "is-up",
-        "change_delta": "+5.6%p"
+        "change_delta": "+3.1%p"
       },
       {
-        "symbol": "GOOG",
-        "name": "Alphabet Inc.",
-        "issuer": "ALPHABET INC",
-        "class_title": "CAP STK CL C",
-        "weight": "12.5%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+1.9%p"
+        "symbol": "UBER",
+        "name": "Uber Technologies, Inc",
+        "issuer": "UBER TECHNOLOGIES INC",
+        "class_title": "COM",
+        "weight": "15.7%",
+        "change_label": "유지",
+        "change_class": "is-flat",
+        "change_delta": "-0.2%p"
       },
       {
-        "symbol": "META",
-        "name": "Meta Platforms, Inc.",
-        "issuer": "META PLATFORMS INC",
-        "class_title": "CL A",
-        "weight": "11.4%",
+        "symbol": "MSFT",
+        "name": "Microsoft Corp",
+        "issuer": "MICROSOFT CORP",
+        "class_title": "COM",
+        "weight": "15.3%",
         "change_label": "신규",
         "change_class": "is-new",
         "change_delta": ""
+      },
+      {
+        "symbol": "QSR",
+        "name": "Restaurant Brands International Inc.",
+        "issuer": "RESTAURANT BRANDS INTL INC",
+        "class_title": "COM",
+        "weight": "12.2%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+2.2%p"
       }
     ]
   },
@@ -127,61 +127,61 @@
     "name": "Warren Buffett",
     "firm": "Berkshire Hathaway",
     "whale_url": "https://whalewisdom.com/filer/berkshire-hathaway-inc",
-    "sec_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526054580/0001193125-26-054580-index.htm",
+    "sec_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526226661/0001193125-26-226661-index.htm",
     "source": "SEC 13F",
-    "filed_at": "2026-02-17",
-    "period_of_report": "12-31-2025",
-    "previous_period_of_report": "09-30-2025",
+    "filed_at": "2026-05-15",
+    "period_of_report": "03-31-2026",
+    "previous_period_of_report": "12-31-2025",
     "holdings": [
       {
         "symbol": "AAPL",
         "name": "Apple Inc.",
         "issuer": "APPLE INC",
         "class_title": "COM",
-        "weight": "22.6%",
-        "change_label": "유지",
-        "change_class": "is-flat",
-        "change_delta": "-0.1%p"
+        "weight": "22.0%",
+        "change_label": "축소",
+        "change_class": "is-down",
+        "change_delta": "-0.6%p"
       },
       {
         "symbol": "AXP",
         "name": "American Express Co",
         "issuer": "AMERICAN EXPRESS CO",
         "class_title": "COM",
-        "weight": "20.5%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+1.6%p"
-      },
-      {
-        "symbol": "BAC",
-        "name": "Bank of America Corp",
-        "issuer": "BANK AMERICA CORP",
-        "class_title": "COM",
-        "weight": "10.4%",
-        "change_label": "신규",
-        "change_class": "is-new",
-        "change_delta": ""
+        "weight": "17.4%",
+        "change_label": "축소",
+        "change_class": "is-down",
+        "change_delta": "-3.0%p"
       },
       {
         "symbol": "KO",
         "name": "Coca-Cola Co",
         "issuer": "COCA COLA CO",
         "class_title": "COM",
-        "weight": "10.2%",
+        "weight": "11.6%",
         "change_label": "확대",
         "change_class": "is-up",
-        "change_delta": "+0.3%p"
+        "change_delta": "+1.4%p"
       },
       {
-        "symbol": "CVX",
-        "name": "Chevron Corp",
-        "issuer": "CHEVRON CORP NEW",
+        "symbol": "BAC",
+        "name": "Bank of America Corp",
+        "issuer": "BANK AMERICA CORP",
         "class_title": "COM",
-        "weight": "7.2%",
-        "change_label": "유지",
-        "change_class": "is-flat",
-        "change_delta": "+0.1%p"
+        "weight": "9.5%",
+        "change_label": "축소",
+        "change_class": "is-down",
+        "change_delta": "-0.9%p"
+      },
+      {
+        "symbol": null,
+        "name": "Chevron Corporation",
+        "issuer": "CHEVRON CORPORATION",
+        "class_title": "COM",
+        "weight": "6.6%",
+        "change_label": "신규",
+        "change_class": "is-new",
+        "change_delta": ""
       }
     ]
   },
@@ -189,61 +189,61 @@
     "name": "Ray Dalio",
     "firm": "Bridgewater Associates",
     "whale_url": "https://whalewisdom.com/filer/bridgewater-associates-lp",
-    "sec_url": "https://www.sec.gov/Archives/edgar/data/1350694/000135069426000001/0001350694-26-000001-index.htm",
+    "sec_url": "https://www.sec.gov/Archives/edgar/data/1350694/000135069426000002/0001350694-26-000002-index.htm",
     "source": "SEC 13F",
-    "filed_at": "2026-02-13",
-    "period_of_report": "12-31-2025",
-    "previous_period_of_report": "09-30-2025",
+    "filed_at": "2026-05-15",
+    "period_of_report": "03-31-2026",
+    "previous_period_of_report": "12-31-2025",
     "holdings": [
       {
-        "symbol": "SPY",
-        "name": "SPDR S&P 500 ETF TRUST",
-        "issuer": "SPDR S&P 500 ETF TR",
+        "symbol": null,
+        "name": "State Str Spdr S&P 500 Etf T",
+        "issuer": "STATE STR SPDR S&P 500 ETF T",
         "class_title": "TR UNIT",
-        "weight": "11.1%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+4.4%p"
+        "weight": "12.7%",
+        "change_label": "신규",
+        "change_class": "is-new",
+        "change_delta": ""
       },
       {
         "symbol": "IVV",
         "name": "iShares Core S&P 500 ETF",
         "issuer": "ISHARES TR",
         "class_title": "CORE S&P500 ETF",
-        "weight": "10.5%",
-        "change_label": "유지",
-        "change_class": "is-flat",
-        "change_delta": "-0.2%p"
+        "weight": "7.8%",
+        "change_label": "축소",
+        "change_class": "is-down",
+        "change_delta": "-2.6%p"
+      },
+      {
+        "symbol": "AMZN",
+        "name": "AMAZON COM INC",
+        "issuer": "AMAZON COM INC",
+        "class_title": "COM",
+        "weight": "4.1%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+2.4%p"
       },
       {
         "symbol": "NVDA",
         "name": "NVIDIA CORP",
         "issuer": "NVIDIA CORPORATION",
         "class_title": "COM",
+        "weight": "3.7%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+1.0%p"
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet Inc.",
+        "issuer": "ALPHABET INC",
+        "class_title": "CAP STK CL A",
         "weight": "2.6%",
         "change_label": "확대",
         "change_class": "is-up",
-        "change_delta": "+0.8%p"
-      },
-      {
-        "symbol": "LRCX",
-        "name": "LAM RESEARCH CORP",
-        "issuer": "LAM RESEARCH CORP",
-        "class_title": "COM NEW",
-        "weight": "1.9%",
-        "change_label": "유지",
-        "change_class": "is-flat",
-        "change_delta": "+0.1%p"
-      },
-      {
-        "symbol": "CRM",
-        "name": "Salesforce, Inc.",
-        "issuer": "SALESFORCE INC",
-        "class_title": "COM",
-        "weight": "1.9%",
-        "change_label": "유지",
-        "change_class": "is-flat",
-        "change_delta": "+0.0%p"
+        "change_delta": "+0.7%p"
       }
     ]
   },
@@ -303,120 +303,58 @@
     "name": "Cathie Wood",
     "firm": "ARK Investment",
     "whale_url": "https://whalewisdom.com/filer/ark-investment-management-llc",
-    "sec_url": "https://www.sec.gov/Archives/edgar/data/1697748/000110465926013538/0001104659-26-013538-index.htm",
+    "sec_url": "https://www.sec.gov/Archives/edgar/data/1697748/000110465926059240/0001104659-26-059240-index.htm",
     "source": "SEC 13F",
-    "filed_at": "2026-02-11",
-    "period_of_report": "12-31-2025",
-    "previous_period_of_report": "09-30-2025",
+    "filed_at": "2026-05-12",
+    "period_of_report": "03-31-2026",
+    "previous_period_of_report": "12-31-2025",
     "holdings": [
       {
         "symbol": "TSLA",
         "name": "Tesla, Inc.",
         "issuer": "Tesla Inc",
         "class_title": "Common Stock",
-        "weight": "8.7%",
+        "weight": "8.2%",
         "change_label": "축소",
         "change_class": "is-down",
-        "change_delta": "-0.8%p"
+        "change_delta": "-0.5%p"
+      },
+      {
+        "symbol": "AMD",
+        "name": "ADVANCED MICRO DEVICES INC",
+        "issuer": "Advanced Micro Devices Inc",
+        "class_title": "Common Stock",
+        "weight": "4.3%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+0.6%p"
+      },
+      {
+        "symbol": "CRSP",
+        "name": "CRISPR Therapeutics AG",
+        "issuer": "CRISPR Therapeutics AG",
+        "class_title": "Common Stock",
+        "weight": "4.2%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+0.5%p"
       },
       {
         "symbol": "SHOP",
         "name": "SHOPIFY INC.",
         "issuer": "Shopify Inc",
         "class_title": "Common Stock",
-        "weight": "4.3%",
-        "change_label": "유지",
-        "change_class": "is-flat",
-        "change_delta": "-0.0%p"
-      },
-      {
-        "symbol": "ROKU",
-        "name": "ROKU, INC",
-        "issuer": "Roku Inc",
-        "class_title": "Common Stock",
-        "weight": "4.2%",
-        "change_label": "유지",
-        "change_class": "is-flat",
-        "change_delta": "-0.1%p"
-      },
-      {
-        "symbol": "COIN",
-        "name": "Coinbase Global, Inc.",
-        "issuer": "Coinbase Global Inc",
-        "class_title": "Common Stock",
-        "weight": "3.8%",
+        "weight": "3.9%",
         "change_label": "축소",
         "change_class": "is-down",
-        "change_delta": "-1.0%p"
+        "change_delta": "-0.4%p"
       },
       {
         "symbol": "PLTR",
         "name": "Palantir Technologies Inc.",
         "issuer": "Palantir Technologies Inc",
         "class_title": "Common Stock",
-        "weight": "3.8%",
-        "change_label": "축소",
-        "change_class": "is-down",
-        "change_delta": "-0.6%p"
-      }
-    ]
-  },
-  {
-    "name": "Seth Klarman",
-    "firm": "Baupost Group",
-    "whale_url": "https://whalewisdom.com/filer/baupost-group-llc-ma",
-    "sec_url": "https://www.sec.gov/Archives/edgar/data/1061768/000106176826000005/0001061768-26-000005-index.htm",
-    "source": "SEC 13F",
-    "filed_at": "2026-02-13",
-    "period_of_report": "12-31-2025",
-    "previous_period_of_report": "09-30-2025",
-    "holdings": [
-      {
-        "symbol": "QSR",
-        "name": "Restaurant Brands International Inc.",
-        "issuer": "RESTAURANT BRANDS INTL INC",
-        "class_title": "COM",
-        "weight": "10.4%",
-        "change_label": "축소",
-        "change_class": "is-down",
-        "change_delta": "-0.6%p"
-      },
-      {
-        "symbol": "AMZN",
-        "name": "AMAZON COM INC",
-        "issuer": "AMAZON COM INC",
-        "class_title": "COM",
-        "weight": "9.3%",
-        "change_label": "신규",
-        "change_class": "is-new",
-        "change_delta": ""
-      },
-      {
-        "symbol": "WTW",
-        "name": "Willis Towers Watson PLC",
-        "issuer": "WILLIS TOWERS WATSON PLC LTD",
-        "class_title": "SHS",
-        "weight": "8.5%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+0.6%p"
-      },
-      {
-        "symbol": "ELV",
-        "name": "Elevance Health Inc",
-        "issuer": "ELEVANCE HEALTH INC FORMERLY",
-        "class_title": "COM",
-        "weight": "8.4%",
-        "change_label": "축소",
-        "change_class": "is-down",
-        "change_delta": "-0.5%p"
-      },
-      {
-        "symbol": "UNP",
-        "name": "Union Pacific Corp",
-        "issuer": "UNION PAC CORP",
-        "class_title": "COM",
-        "weight": "7.1%",
+        "weight": "3.5%",
         "change_label": "축소",
         "change_class": "is-down",
         "change_delta": "-0.3%p"
@@ -424,495 +362,123 @@
     ]
   },
   {
-    "name": "Jim Simons",
-    "firm": "Renaissance Tech",
-    "whale_url": "https://whalewisdom.com/filer/renaissance-technologies-llc",
-    "sec_url": "https://www.sec.gov/Archives/edgar/data/1037389/000103738926000023/0001037389-26-000023-index.htm",
+    "name": "Seth Klarman",
+    "firm": "Baupost Group",
+    "whale_url": "https://whalewisdom.com/filer/baupost-group-llc-ma",
+    "sec_url": "https://www.sec.gov/Archives/edgar/data/1061768/000106176826000007/0001061768-26-000007-index.htm",
     "source": "SEC 13F",
-    "filed_at": "2026-02-12",
-    "period_of_report": "12-31-2025",
-    "previous_period_of_report": "09-30-2025",
+    "filed_at": "2026-05-14",
+    "period_of_report": "03-31-2026",
+    "previous_period_of_report": "12-31-2025",
     "holdings": [
       {
-        "symbol": "PLTR",
-        "name": "Palantir Technologies Inc.",
-        "issuer": "PALANTIR TECHNOLOGIES INC",
-        "class_title": "CL A",
-        "weight": "2.4%",
+        "symbol": "AMZN",
+        "name": "AMAZON COM INC",
+        "issuer": "AMAZON COM INC",
+        "class_title": "COM",
+        "weight": "12.7%",
         "change_label": "확대",
         "change_class": "is-up",
-        "change_delta": "+0.4%p"
+        "change_delta": "+3.4%p"
       },
       {
-        "symbol": "UTHR",
-        "name": "United Therapeutics Corp",
-        "issuer": "UNITED THERAPEUTICS CORP DEL",
+        "symbol": "QSR",
+        "name": "Restaurant Brands International Inc.",
+        "issuer": "RESTAURANT BRANDS INTL INC",
         "class_title": "COM",
-        "weight": "1.4%",
+        "weight": "11.7%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+1.2%p"
+      },
+      {
+        "symbol": "WCC",
+        "name": "WESCO INTERNATIONAL INC",
+        "issuer": "WESCO INTL INC",
+        "class_title": "COM",
+        "weight": "7.7%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+1.1%p"
+      },
+      {
+        "symbol": "UNP",
+        "name": "Union Pacific Corp",
+        "issuer": "UNION PAC CORP",
+        "class_title": "COM",
+        "weight": "7.3%",
         "change_label": "유지",
         "change_class": "is-flat",
         "change_delta": "+0.2%p"
       },
       {
-        "symbol": "MU",
-        "name": "MICRON TECHNOLOGY INC",
-        "issuer": "MICRON TECHNOLOGY INC",
+        "symbol": "ELV",
+        "name": "Elevance Health Inc",
+        "issuer": "ELEVANCE HEALTH INC FORMERLY",
         "class_title": "COM",
-        "weight": "1.3%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+1.1%p"
+        "weight": "7.3%",
+        "change_label": "축소",
+        "change_class": "is-down",
+        "change_delta": "-1.1%p"
+      }
+    ]
+  },
+  {
+    "name": "Jim Simons",
+    "firm": "Renaissance Tech",
+    "whale_url": "https://whalewisdom.com/filer/renaissance-technologies-llc",
+    "sec_url": "https://www.sec.gov/Archives/edgar/data/1037389/000103738926000033/0001037389-26-000033-index.htm",
+    "source": "SEC 13F",
+    "filed_at": "2026-05-14",
+    "period_of_report": "03-31-2026",
+    "previous_period_of_report": "12-31-2025",
+    "holdings": [
+      {
+        "symbol": "UTHR",
+        "name": "United Therapeutics Corp",
+        "issuer": "UNITED THERAPEUTICS CORP DEL",
+        "class_title": "COM",
+        "weight": "1.7%",
+        "change_label": "유지",
+        "change_class": "is-flat",
+        "change_delta": "+0.2%p"
+      },
+      {
+        "symbol": "PLTR",
+        "name": "Palantir Technologies Inc.",
+        "issuer": "PALANTIR TECHNOLOGIES INC",
+        "class_title": "CL A",
+        "weight": "1.6%",
+        "change_label": "축소",
+        "change_class": "is-down",
+        "change_delta": "-0.8%p"
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple Inc.",
+        "issuer": "APPLE INC",
+        "class_title": "COM",
+        "weight": "1.2%",
+        "change_label": "신규",
+        "change_class": "is-new",
+        "change_delta": ""
       },
       {
         "symbol": "KGC",
         "name": "Kinross Gold Corp",
         "issuer": "KINROSS GOLD CORP",
         "class_title": "COM",
-        "weight": "1.1%",
+        "weight": "1.2%",
         "change_label": "유지",
         "change_class": "is-flat",
-        "change_delta": "+0.2%p"
-      },
-      {
-        "symbol": "VRSN",
-        "name": "VERISIGN INC/CA",
-        "issuer": "VERISIGN INC",
-        "class_title": "COM",
-        "weight": "1.0%",
-        "change_label": "유지",
-        "change_class": "is-flat",
-        "change_delta": "-0.1%p"
-      }
-    ]
-  },
-  {
-    "name": "David Tepper",
-    "firm": "Appaloosa Management",
-    "whale_url": "https://whalewisdom.com/filer/appaloosa-management-lp",
-    "sec_url": "https://www.sec.gov/Archives/edgar/data/1656456/000165645626000001/0001656456-26-000001-index.htm",
-    "source": "SEC 13F",
-    "filed_at": "2026-02-17",
-    "period_of_report": "12-31-2025",
-    "previous_period_of_report": "09-30-2025",
-    "holdings": [
-      {
-        "symbol": "CRDO",
-        "name": "Credo Technology Group Holding Ltd",
-        "issuer": "ALIBABA GROUP HLDG LTD",
-        "class_title": "SPONSORED ADS",
-        "weight": "11.0%",
-        "change_label": "축소",
-        "change_class": "is-down",
-        "change_delta": "-4.6%p"
-      },
-      {
-        "symbol": "GOOG",
-        "name": "Alphabet Inc.",
-        "issuer": "ALPHABET INC",
-        "class_title": "CAP STK CL C",
-        "weight": "8.2%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+3.6%p"
-      },
-      {
-        "symbol": "AMZN",
-        "name": "AMAZON COM INC",
-        "issuer": "AMAZON COM INC",
-        "class_title": "COM",
-        "weight": "7.3%",
-        "change_label": "유지",
-        "change_class": "is-flat",
-        "change_delta": "-0.1%p"
+        "change_delta": "+0.1%p"
       },
       {
         "symbol": "MU",
         "name": "MICRON TECHNOLOGY INC",
         "issuer": "MICRON TECHNOLOGY INC",
         "class_title": "COM",
-        "weight": "6.2%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+5.1%p"
-      },
-      {
-        "symbol": "META",
-        "name": "Meta Platforms, Inc.",
-        "issuer": "META PLATFORMS INC",
-        "class_title": "CL A",
-        "weight": "5.8%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+2.1%p"
-      }
-    ]
-  },
-  {
-    "name": "Chase Coleman",
-    "firm": "Tiger Global",
-    "whale_url": "https://whalewisdom.com/filer/tiger-global-management-llc",
-    "sec_url": "https://www.sec.gov/Archives/edgar/data/1167483/000091957426001143/0000919574-26-001143-index.htm",
-    "source": "SEC 13F",
-    "filed_at": "2026-02-17",
-    "period_of_report": "12-31-2025",
-    "previous_period_of_report": "09-30-2025",
-    "holdings": [
-      {
-        "symbol": "GOOGL",
-        "name": "Alphabet Inc.",
-        "issuer": "ALPHABET INC",
-        "class_title": "CAP STK CL A",
-        "weight": "11.2%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+3.2%p"
-      },
-      {
-        "symbol": "MSFT",
-        "name": "Microsoft Corp",
-        "issuer": "MICROSOFT CORP",
-        "class_title": "COM",
-        "weight": "8.9%",
-        "change_label": "축소",
-        "change_class": "is-down",
-        "change_delta": "-1.6%p"
-      },
-      {
-        "symbol": "AMZN",
-        "name": "AMAZON COM INC",
-        "issuer": "AMAZON COM INC",
-        "class_title": "COM",
-        "weight": "7.8%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+0.3%p"
-      },
-      {
-        "symbol": "NVDA",
-        "name": "NVIDIA CORP",
-        "issuer": "NVIDIA CORPORATION",
-        "class_title": "COM",
-        "weight": "6.9%",
-        "change_label": "유지",
-        "change_class": "is-flat",
-        "change_delta": "+0.2%p"
-      },
-      {
-        "symbol": "SE",
-        "name": "Sea Ltd",
-        "issuer": "SEA LTD",
-        "class_title": "SPONSORD ADS",
-        "weight": "6.6%",
-        "change_label": "축소",
-        "change_class": "is-down",
-        "change_delta": "-2.2%p"
-      }
-    ]
-  },
-  {
-    "name": "Paul Tudor Jones",
-    "firm": "Tudor Investment",
-    "whale_url": "https://whalewisdom.com/filer/tudor-investment-corp-et-al",
-    "sec_url": "https://www.sec.gov/Archives/edgar/data/923093/000090266426001113/0000902664-26-001113-index.htm",
-    "source": "SEC 13F",
-    "filed_at": "2026-02-17",
-    "period_of_report": "12-31-2025",
-    "previous_period_of_report": "09-30-2025",
-    "holdings": [
-      {
-        "symbol": null,
-        "name": "Ishares Core S&P 500 Etf - Us Etp",
-        "issuer": "Ishares Core S&P 500 Etf - US ETP",
-        "class_title": "Exchange-Traded Fund",
-        "weight": "5.2%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+5.2%p"
-      },
-      {
-        "symbol": "NVDA",
-        "name": "NVIDIA CORP",
-        "issuer": "Nvidia Corp - US",
-        "class_title": "Equity",
-        "weight": "2.2%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+0.8%p"
-      },
-      {
-        "symbol": null,
-        "name": "Invesco Qqq Trust Series 1 - Us Etp",
-        "issuer": "Invesco Qqq Trust Series 1 - US ETP",
-        "class_title": "Exchange-Traded Fund",
-        "weight": "2.0%",
-        "change_label": "유지",
-        "change_class": "is-flat",
-        "change_delta": "-0.1%p"
-      },
-      {
-        "symbol": "AMZN",
-        "name": "AMAZON COM INC",
-        "issuer": "Amazon.Com Inc - US",
-        "class_title": "Equity",
-        "weight": "2.0%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+0.9%p"
-      },
-      {
-        "symbol": "MSFT",
-        "name": "MICROSOFT CORP",
-        "issuer": "Microsoft Corp - US",
-        "class_title": "Equity",
-        "weight": "1.9%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+0.7%p"
-      }
-    ]
-  },
-  {
-    "name": "Howard Marks",
-    "firm": "Oaktree Capital",
-    "whale_url": "https://whalewisdom.com/filer/oaktree-capital-management-lp",
-    "sec_url": "https://www.sec.gov/Archives/edgar/data/949509/000094950926000001/0000949509-26-000001-index.htm",
-    "source": "SEC 13F",
-    "filed_at": "2026-02-17",
-    "period_of_report": "12-31-2025",
-    "previous_period_of_report": "09-30-2025",
-    "holdings": [
-      {
-        "symbol": "EXE",
-        "name": "Expand Energy Corp",
-        "issuer": "EXPAND ENERGY CORP",
-        "class_title": "COMMON STOCK",
-        "weight": "9.1%",
-        "change_label": "유지",
-        "change_class": "is-flat",
-        "change_delta": "+0.1%p"
-      },
-      {
-        "symbol": "TRMD",
-        "name": "TORM plc",
-        "issuer": "TORM PLC",
-        "class_title": "COMMON STOCK",
-        "weight": "8.5%",
-        "change_label": "축소",
-        "change_class": "is-down",
-        "change_delta": "-5.4%p"
-      },
-      {
-        "symbol": "AU",
-        "name": "AngloGold Ashanti plc",
-        "issuer": "ANGLOGOLD ASHANTI PLC",
-        "class_title": "COMMON STOCK",
-        "weight": "5.3%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+0.4%p"
-      },
-      {
-        "symbol": "GTX",
-        "name": "Garrett Motion Inc",
-        "issuer": "GARRETT MOTION INC",
-        "class_title": "COMMON STOCK",
-        "weight": "4.8%",
-        "change_label": "축소",
-        "change_class": "is-down",
-        "change_delta": "-2.4%p"
-      },
-      {
-        "symbol": "INDV",
-        "name": "Indivior Pharmaceuticals, Inc.",
-        "issuer": "Indivior Pharmaceuticals Inc",
-        "class_title": "COMMON STOCK",
-        "weight": "4.1%",
-        "change_label": "신규",
-        "change_class": "is-new",
-        "change_delta": ""
-      }
-    ]
-  },
-  {
-    "name": "Carl Icahn",
-    "firm": "Icahn Enterprises",
-    "whale_url": "https://whalewisdom.com/filer/icahn-carl-c",
-    "sec_url": "https://www.sec.gov/Archives/edgar/data/921669/000153949726000679/0001539497-26-000679-index.htm",
-    "source": "SEC 13F",
-    "filed_at": "2026-02-17",
-    "period_of_report": "12-31-2025",
-    "previous_period_of_report": "09-30-2025",
-    "holdings": [
-      {
-        "symbol": "IEP",
-        "name": "Icahn Enterprises LP",
-        "issuer": "Icahn Enterprises LP",
-        "class_title": "DEPOSITARY UNIT",
-        "weight": "49.1%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+1.3%p"
-      },
-      {
-        "symbol": "CVI",
-        "name": "CVR Energy Inc",
-        "issuer": "CVR Energy Inc",
-        "class_title": "COM",
-        "weight": "21.2%",
-        "change_label": "축소",
-        "change_class": "is-down",
-        "change_delta": "-6.9%p"
-      },
-      {
-        "symbol": "SWX",
-        "name": "Southwest Gas Holdings Inc",
-        "issuer": "Southwest Gas Holdings Inc.",
-        "class_title": "COM",
-        "weight": "5.7%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+0.5%p"
-      },
-      {
-        "symbol": "UAN",
-        "name": "CVR Partners LP",
-        "issuer": "CVR Partners, LP",
-        "class_title": "COM",
-        "weight": "5.1%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+0.9%p"
-      },
-      {
-        "symbol": "SATS",
-        "name": "EchoStar Corp",
-        "issuer": "EchoStar Corporation",
-        "class_title": "CL A",
-        "weight": "4.3%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+0.7%p"
-      }
-    ]
-  },
-  {
-    "name": "Nelson Peltz",
-    "firm": "Trian Fund Mgmt",
-    "whale_url": "https://whalewisdom.com/filer/trian-fund-management-lp",
-    "sec_url": "https://www.sec.gov/Archives/edgar/data/1345471/000134547126000015/0001345471-26-000015-index.htm",
-    "source": "SEC 13F",
-    "filed_at": "2026-02-17",
-    "period_of_report": "12-31-2025",
-    "previous_period_of_report": "09-30-2025",
-    "holdings": [
-      {
-        "symbol": "JHG",
-        "name": "Janus Henderson Group plc",
-        "issuer": "Janus Henderson Group plc",
-        "class_title": "ORD SHS",
-        "weight": "38.1%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+3.5%p"
-      },
-      {
-        "symbol": null,
-        "name": "Ge Aerospace",
-        "issuer": "GE Aerospace",
-        "class_title": "COM NEW",
-        "weight": "31.2%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+1.6%p"
-      },
-      {
-        "symbol": "SOLV",
-        "name": "Solventum Corp",
-        "issuer": "Solventum Corporation",
-        "class_title": "COM SHS",
-        "weight": "16.4%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+1.3%p"
-      },
-      {
-        "symbol": "WEN",
-        "name": "Wendy's Co",
-        "issuer": "Wendys Co.",
-        "class_title": "COM",
-        "weight": "6.4%",
-        "change_label": "축소",
-        "change_class": "is-down",
-        "change_delta": "-0.4%p"
-      },
-      {
-        "symbol": "FERG",
-        "name": "Ferguson plc",
-        "issuer": "Ferguson Plc New",
-        "class_title": "SHS",
-        "weight": "6.1%",
-        "change_label": "유지",
-        "change_class": "is-flat",
-        "change_delta": "+0.1%p"
-      }
-    ]
-  },
-  {
-    "name": "Steve Cohen",
-    "firm": "Point72 Asset Mgmt",
-    "whale_url": "https://whalewisdom.com/filer/point72-asset-management-l-p",
-    "sec_url": "https://www.sec.gov/Archives/edgar/data/1603466/000090266426001100/0000902664-26-001100-index.htm",
-    "source": "SEC 13F",
-    "filed_at": "2026-02-17",
-    "period_of_report": "12-31-2025",
-    "previous_period_of_report": "09-30-2025",
-    "holdings": [
-      {
-        "symbol": "NVDA",
-        "name": "NVIDIA CORP",
-        "issuer": "NVIDIA CORPORATION",
-        "class_title": "COM",
-        "weight": "2.9%",
-        "change_label": "유지",
-        "change_class": "is-flat",
-        "change_delta": "-0.0%p"
-      },
-      {
-        "symbol": null,
-        "name": "Taiwan Semiconductor Mfg Ltd",
-        "issuer": "TAIWAN SEMICONDUCTOR MFG LTD",
-        "class_title": "SPONSORED ADS",
-        "weight": "2.2%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+1.1%p"
-      },
-      {
-        "symbol": "AMZN",
-        "name": "AMAZON COM INC",
-        "issuer": "AMAZON COM INC",
-        "class_title": "COM",
-        "weight": "1.9%",
-        "change_label": "확대",
-        "change_class": "is-up",
-        "change_delta": "+0.4%p"
-      },
-      {
-        "symbol": "MSFT",
-        "name": "Microsoft Corp",
-        "issuer": "MICROSOFT CORP",
-        "class_title": "COM",
-        "weight": "1.6%",
-        "change_label": "축소",
-        "change_class": "is-down",
-        "change_delta": "-1.3%p"
-      },
-      {
-        "symbol": "ANET",
-        "name": "Arista Networks, Inc.",
-        "issuer": "ARISTA NETWORKS INC",
-        "class_title": "COM SHS",
-        "weight": "1.6%",
+        "weight": "1.1%",
         "change_label": "유지",
         "change_class": "is-flat",
         "change_delta": "-0.2%p"
@@ -920,64 +486,498 @@
     ]
   },
   {
-    "name": "Israel Englander",
-    "firm": "Millennium Mgmt",
-    "whale_url": "https://whalewisdom.com/filer/millennium-management-llc",
-    "sec_url": "https://www.sec.gov/Archives/edgar/data/1273087/000127308726000002/0001273087-26-000002-index.htm",
+    "name": "David Tepper",
+    "firm": "Appaloosa Management",
+    "whale_url": "https://whalewisdom.com/filer/appaloosa-management-lp",
+    "sec_url": "https://www.sec.gov/Archives/edgar/data/1656456/000165645626000002/0001656456-26-000002-index.htm",
     "source": "SEC 13F",
-    "filed_at": "2026-02-17",
-    "period_of_report": "12-31-2025",
-    "previous_period_of_report": "09-30-2025",
+    "filed_at": "2026-05-15",
+    "period_of_report": "03-31-2026",
+    "previous_period_of_report": "12-31-2025",
     "holdings": [
       {
-        "symbol": "IVV",
-        "name": "iShares Core S&P 500 ETF",
-        "issuer": "ISHARES  TR",
-        "class_title": "CORE    S&P500        ETF",
-        "weight": "7.1%",
+        "symbol": "AMZN",
+        "name": "AMAZON COM INC",
+        "issuer": "AMAZON COM INC",
+        "class_title": "COM",
+        "weight": "15.2%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+7.8%p"
+      },
+      {
+        "symbol": "MU",
+        "name": "MICRON TECHNOLOGY INC",
+        "issuer": "MICRON TECHNOLOGY INC",
+        "class_title": "COM",
+        "weight": "9.5%",
         "change_label": "확대",
         "change_class": "is-up",
         "change_delta": "+3.2%p"
       },
       {
-        "symbol": "WMT",
-        "name": "Walmart Inc.",
-        "issuer": "WALMART       INC",
+        "symbol": "GOOG",
+        "name": "Alphabet Inc.",
+        "issuer": "ALPHABET INC",
+        "class_title": "CAP STK CL C",
+        "weight": "8.4%",
+        "change_label": "유지",
+        "change_class": "is-flat",
+        "change_delta": "+0.2%p"
+      },
+      {
+        "symbol": "UBER",
+        "name": "Uber Technologies, Inc",
+        "issuer": "UBER TECHNOLOGIES INC",
         "class_title": "COM",
-        "weight": "3.3%",
+        "weight": "7.7%",
         "change_label": "확대",
         "change_class": "is-up",
-        "change_delta": "+3.0%p"
+        "change_delta": "+5.5%p"
+      },
+      {
+        "symbol": null,
+        "name": "Taiwan Semiconductor Manufac",
+        "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
+        "class_title": "SPONSORED ADS",
+        "weight": "7.6%",
+        "change_label": "신규",
+        "change_class": "is-new",
+        "change_delta": ""
+      }
+    ]
+  },
+  {
+    "name": "Chase Coleman",
+    "firm": "Tiger Global",
+    "whale_url": "https://whalewisdom.com/filer/tiger-global-management-llc",
+    "sec_url": "https://www.sec.gov/Archives/edgar/data/1167483/000091957426003362/0000919574-26-003362-index.htm",
+    "source": "SEC 13F",
+    "filed_at": "2026-05-15",
+    "period_of_report": "03-31-2026",
+    "previous_period_of_report": "12-31-2025",
+    "holdings": [
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet Inc.",
+        "issuer": "ALPHABET INC",
+        "class_title": "CAP STK CL A",
+        "weight": "13.4%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+2.2%p"
       },
       {
         "symbol": "NVDA",
         "name": "NVIDIA CORP",
-        "issuer": "NVIDIA   CORPORATION",
+        "issuer": "NVIDIA CORPORATION",
         "class_title": "COM",
-        "weight": "2.0%",
+        "weight": "9.2%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+2.3%p"
+      },
+      {
+        "symbol": "AMZN",
+        "name": "AMAZON COM INC",
+        "issuer": "AMAZON COM INC",
+        "class_title": "COM",
+        "weight": "9.1%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+1.3%p"
+      },
+      {
+        "symbol": null,
+        "name": "Taiwan Semiconductor Manufac",
+        "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
+        "class_title": "SPONSORED ADS",
+        "weight": "8.2%",
+        "change_label": "신규",
+        "change_class": "is-new",
+        "change_delta": ""
+      },
+      {
+        "symbol": "META",
+        "name": "Meta Platforms, Inc.",
+        "issuer": "META PLATFORMS INC",
+        "class_title": "CL A",
+        "weight": "7.7%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+1.6%p"
+      }
+    ]
+  },
+  {
+    "name": "Paul Tudor Jones",
+    "firm": "Tudor Investment",
+    "whale_url": "https://whalewisdom.com/filer/tudor-investment-corp-et-al",
+    "sec_url": "https://www.sec.gov/Archives/edgar/data/923093/000090266426002516/0000902664-26-002516-index.htm",
+    "source": "SEC 13F",
+    "filed_at": "2026-05-15",
+    "period_of_report": "03-31-2026",
+    "previous_period_of_report": "12-31-2025",
+    "holdings": [
+      {
+        "symbol": null,
+        "name": "State Street Spdr S&P 500 Etf Trust - Us Etp",
+        "issuer": "State Street SPDR S&P 500 ETF Trust - US ETP",
+        "class_title": "Exchange-Traded Fund",
+        "weight": "3.9%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+2.3%p"
+      },
+      {
+        "symbol": "EA",
+        "name": "ELECTRONIC ARTS INC.",
+        "issuer": "Electronic Arts Inc - US",
+        "class_title": "Equity",
+        "weight": "1.5%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+0.5%p"
+      },
+      {
+        "symbol": "MSFT",
+        "name": "MICROSOFT CORP",
+        "issuer": "Microsoft Corp - US",
+        "class_title": "Equity",
+        "weight": "1.3%",
         "change_label": "축소",
         "change_class": "is-down",
         "change_delta": "-0.6%p"
       },
       {
-        "symbol": "SPY",
-        "name": "SPDR S&P 500 ETF TRUST",
-        "issuer": "SPDR  S&P    500   ETF   TR",
-        "class_title": "TR      UNIT",
-        "weight": "1.8%",
+        "symbol": "TSLA",
+        "name": "Tesla, Inc.",
+        "issuer": "Tesla Inc - US",
+        "class_title": "Equity",
+        "weight": "1.2%",
         "change_label": "확대",
         "change_class": "is-up",
         "change_delta": "+1.0%p"
       },
       {
-        "symbol": "IBIT",
-        "name": "iShares Bitcoin Trust ETF",
-        "issuer": "ISHARES  BITCOIN   TRUST  ETF",
-        "class_title": "SHS     BEN    INT",
+        "symbol": null,
+        "name": "Webster Financial Corp - Us",
+        "issuer": "Webster Financial Corp - US",
+        "class_title": "Equity",
         "weight": "1.2%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+1.1%p"
+      }
+    ]
+  },
+  {
+    "name": "Howard Marks",
+    "firm": "Oaktree Capital",
+    "whale_url": "https://whalewisdom.com/filer/oaktree-capital-management-lp",
+    "sec_url": "https://www.sec.gov/Archives/edgar/data/949509/000094950926000002/0000949509-26-000002-index.htm",
+    "source": "SEC 13F",
+    "filed_at": "2026-05-14",
+    "period_of_report": "03-31-2026",
+    "previous_period_of_report": "12-31-2025",
+    "holdings": [
+      {
+        "symbol": "TRMD",
+        "name": "TORM plc",
+        "issuer": "TORM PLC",
+        "class_title": "COMMON STOCK",
+        "weight": "12.0%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+3.4%p"
+      },
+      {
+        "symbol": "EXE",
+        "name": "Expand Energy Corp",
+        "issuer": "EXPAND ENERGY CORP",
+        "class_title": "COMMON STOCK",
+        "weight": "10.2%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+1.1%p"
+      },
+      {
+        "symbol": "AU",
+        "name": "AngloGold Ashanti plc",
+        "issuer": "ANGLOGOLD ASHANTI PLC",
+        "class_title": "COMMON STOCK",
+        "weight": "5.6%",
         "change_label": "유지",
         "change_class": "is-flat",
         "change_delta": "+0.2%p"
+      },
+      {
+        "symbol": "GTX",
+        "name": "Garrett Motion Inc",
+        "issuer": "GARRETT MOTION INC",
+        "class_title": "COMMON STOCK",
+        "weight": "4.7%",
+        "change_label": "유지",
+        "change_class": "is-flat",
+        "change_delta": "-0.1%p"
+      },
+      {
+        "symbol": null,
+        "name": "Telephone And Data Systems Inc",
+        "issuer": "TELEPHONE AND DATA SYSTEMS INC",
+        "class_title": "COMMON STOCK",
+        "weight": "3.2%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+0.8%p"
+      }
+    ]
+  },
+  {
+    "name": "Carl Icahn",
+    "firm": "Icahn Enterprises",
+    "whale_url": "https://whalewisdom.com/filer/icahn-carl-c",
+    "sec_url": "https://www.sec.gov/Archives/edgar/data/921669/000153949726001469/0001539497-26-001469-index.htm",
+    "source": "SEC 13F",
+    "filed_at": "2026-05-15",
+    "period_of_report": "03-31-2026",
+    "previous_period_of_report": "12-31-2025",
+    "holdings": [
+      {
+        "symbol": "IEP",
+        "name": "Icahn Enterprises LP",
+        "issuer": "Icahn Enterprises LP",
+        "class_title": "DEPOSITARY UNIT",
+        "weight": "48.5%",
+        "change_label": "축소",
+        "change_class": "is-down",
+        "change_delta": "-0.6%p"
+      },
+      {
+        "symbol": "CVI",
+        "name": "CVR Energy Inc",
+        "issuer": "CVR Energy Inc",
+        "class_title": "COM",
+        "weight": "28.0%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+6.8%p"
+      },
+      {
+        "symbol": "UAN",
+        "name": "CVR Partners LP",
+        "issuer": "CVR Partners, LP",
+        "class_title": "COM",
+        "weight": "6.2%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+1.1%p"
+      },
+      {
+        "symbol": "CTRI",
+        "name": "Centuri Holdings, Inc.",
+        "issuer": "Centuri Holdings, Inc.",
+        "class_title": "COM SHS",
+        "weight": "4.9%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+0.6%p"
+      },
+      {
+        "symbol": "IFF",
+        "name": "INTERNATIONAL FLAVORS & FRAGRANCES INC",
+        "issuer": "International Flavors and Fragrances Inc.",
+        "class_title": "COM",
+        "weight": "3.6%",
+        "change_label": "유지",
+        "change_class": "is-flat",
+        "change_delta": "+0.2%p"
+      }
+    ]
+  },
+  {
+    "name": "Nelson Peltz",
+    "firm": "Trian Fund Mgmt",
+    "whale_url": "https://whalewisdom.com/filer/trian-fund-management-lp",
+    "sec_url": "https://www.sec.gov/Archives/edgar/data/1345471/000134547126000026/0001345471-26-000026-index.htm",
+    "source": "SEC 13F",
+    "filed_at": "2026-05-15",
+    "period_of_report": "03-31-2026",
+    "previous_period_of_report": "12-31-2025",
+    "holdings": [
+      {
+        "symbol": "JHG",
+        "name": "Janus Henderson Group plc",
+        "issuer": "Janus Henderson Group plc",
+        "class_title": "ORD SHS",
+        "weight": "42.4%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+4.4%p"
+      },
+      {
+        "symbol": null,
+        "name": "Ge Aerospace",
+        "issuer": "GE Aerospace",
+        "class_title": "COM NEW",
+        "weight": "29.6%",
+        "change_label": "축소",
+        "change_class": "is-down",
+        "change_delta": "-1.5%p"
+      },
+      {
+        "symbol": "SOLV",
+        "name": "Solventum Corp",
+        "issuer": "Solventum Corporation",
+        "class_title": "COM SHS",
+        "weight": "13.9%",
+        "change_label": "축소",
+        "change_class": "is-down",
+        "change_delta": "-2.4%p"
+      },
+      {
+        "symbol": "FERG",
+        "name": "Ferguson plc",
+        "issuer": "Ferguson Plc New",
+        "class_title": "SHS",
+        "weight": "6.6%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+0.5%p"
+      },
+      {
+        "symbol": "WEN",
+        "name": "Wendy's Co",
+        "issuer": "Wendys Co.",
+        "class_title": "COM",
+        "weight": "5.5%",
+        "change_label": "축소",
+        "change_class": "is-down",
+        "change_delta": "-0.9%p"
+      }
+    ]
+  },
+  {
+    "name": "Steve Cohen",
+    "firm": "Point72 Asset Mgmt",
+    "whale_url": "https://whalewisdom.com/filer/point72-asset-management-l-p",
+    "sec_url": "https://www.sec.gov/Archives/edgar/data/1603466/000091957426003476/0000919574-26-003476-index.htm",
+    "source": "SEC 13F",
+    "filed_at": "2026-05-15",
+    "period_of_report": "03-31-2026",
+    "previous_period_of_report": "12-31-2025",
+    "holdings": [
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA CORP",
+        "issuer": "NVIDIA CORPORATION",
+        "class_title": "COM",
+        "weight": "2.3%",
+        "change_label": "축소",
+        "change_class": "is-down",
+        "change_delta": "-0.6%p"
+      },
+      {
+        "symbol": "AMZN",
+        "name": "AMAZON COM INC",
+        "issuer": "AMAZON COM INC",
+        "class_title": "COM",
+        "weight": "1.8%",
+        "change_label": "유지",
+        "change_class": "is-flat",
+        "change_delta": "-0.1%p"
+      },
+      {
+        "symbol": "ANET",
+        "name": "Arista Networks, Inc.",
+        "issuer": "ARISTA NETWORKS INC",
+        "class_title": "COM SHS",
+        "weight": "1.4%",
+        "change_label": "유지",
+        "change_class": "is-flat",
+        "change_delta": "-0.2%p"
+      },
+      {
+        "symbol": null,
+        "name": "Asml Hldg Nv",
+        "issuer": "ASML HLDG NV",
+        "class_title": "N Y REGISTRY SHS",
+        "weight": "1.3%",
+        "change_label": "신규",
+        "change_class": "is-new",
+        "change_delta": ""
+      },
+      {
+        "symbol": "CRDO",
+        "name": "Credo Technology Group Holding Ltd",
+        "issuer": "CREDO TECHNOLOGY GROUP HOLDI",
+        "class_title": "ORDINARY SHARES",
+        "weight": "1.2%",
+        "change_label": "유지",
+        "change_class": "is-flat",
+        "change_delta": "-0.0%p"
+      }
+    ]
+  },
+  {
+    "name": "Israel Englander",
+    "firm": "Millennium Mgmt",
+    "whale_url": "https://whalewisdom.com/filer/millennium-management-llc",
+    "sec_url": "https://www.sec.gov/Archives/edgar/data/1273087/000127308726000004/0001273087-26-000004-index.htm",
+    "source": "SEC 13F",
+    "filed_at": "2026-05-15",
+    "period_of_report": "03-31-2026",
+    "previous_period_of_report": "12-31-2025",
+    "holdings": [
+      {
+        "symbol": "IVV",
+        "name": "iShares Core S&P 500 ETF",
+        "issuer": "ISHARES  TR",
+        "class_title": "CORE   S&P500       ETF",
+        "weight": "6.3%",
+        "change_label": "축소",
+        "change_class": "is-down",
+        "change_delta": "-0.8%p"
+      },
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA CORP",
+        "issuer": "NVIDIA    CORPORATION",
+        "class_title": "COM",
+        "weight": "1.4%",
+        "change_label": "축소",
+        "change_class": "is-down",
+        "change_delta": "-0.7%p"
+      },
+      {
+        "symbol": "GJO",
+        "name": "STRATS SM TRUST FOR WAL-MART STORES, INC. SECURITIES, SERIES 2005-4",
+        "issuer": "SPDR  SERIES  TRUST",
+        "class_title": "STATE  STREET     SPD",
+        "weight": "1.2%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+1.2%p"
+      },
+      {
+        "symbol": "WDC",
+        "name": "WESTERN DIGITAL CORP",
+        "issuer": "WESTERN   DIGITAL      CORP",
+        "class_title": "NOTE        3.000%11/1",
+        "weight": "1.1%",
+        "change_label": "확대",
+        "change_class": "is-up",
+        "change_delta": "+0.4%p"
+      },
+      {
+        "symbol": "NSC",
+        "name": "NORFOLK SOUTHERN CORP",
+        "issuer": "NORFOLK   SOUTHN       CORP",
+        "class_title": "COM",
+        "weight": "1.0%",
+        "change_label": "유지",
+        "change_class": "is-flat",
+        "change_delta": "+0.1%p"
       }
     ]
   }
